@@ -4,17 +4,17 @@
   <CesiumGloble />
   <RectangleCreatorDemo />
 
-  <TemplateVue />
+  <!-- <TemplateVue /> -->
   <SideBar />
 </template>
 
 <script setup lang="ts">
-import TemplateVue from "./components/qkui/Template.vue";
-import SideBar from "./components/qkui/SideBar.vue";
+import TemplateVue from "./components/CesiumIndex/Template.vue";
+import SideBar from "./components/CesiumIndex/SideBar.vue";
 
 import CesiumGloble from "./components/CesiumGloble.vue";
-import HelloWorld from "./components/HelloWorld.vue";
-import RectangleCreatorDemo from "./components/RectangleCreatorDemo.vue";
+// import HelloWorld from "./components/HelloWorld.vue";
+// import RectangleCreatorDemo from "./components/RectangleCreatorDemo.vue";
 </script>
 
 <style>

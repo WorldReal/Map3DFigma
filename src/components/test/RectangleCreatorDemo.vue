@@ -16,7 +16,6 @@ const cancel = () => {
 
 <template>
   <div id="figma_info">
-    <h2>Rectangle Creator</h2>
     <p>Count: <input id="count" v-model="count" /></p>
     <button @click="create">Create</button>
     <button @click="cancel">Cancel</button>
@@ -28,6 +27,5 @@ const cancel = () => {
   left: 100px;
   top: 100px;
   position: absolute;
-  z-index: 2;
 }
 </style>
