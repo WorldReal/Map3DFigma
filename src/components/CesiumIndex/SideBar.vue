@@ -1,10 +1,21 @@
 
 
 <template>
-  <button class="slide-control" @click="show = !show">Toggle render</button>
+  <button class="slide-control" @click="show = !show">globleControl</button>
   <!--侧边栏 注意v-show保持状态（不用v-if）-->
   <transition name="slide-fade">
-    <p v-show="show" class="slide-in">hello</p>
+    <!-- <button class="slide-control" @click="show = !show">dataMake</button>
+    <button class="slide-control" @click="show = !show">dataStyle</button>
+    <button class="slide-control" @click="show = !show">showControl</button> -->
+    <!-- 控制页切换 -->
+    <!-- 使用shader特效  打碎反转 -->
+    <!-- 直接书签页拉开 -->
+    <p v-show="show" class="slide-in">
+      hello
+      <button class="slide-control" @click="show = !show">dataMake</button>
+      <button class="slide-control" @click="show = !show">dataStyle</button>
+      <button class="slide-control" @click="show = !show">showControl</button>
+    </p>
   </transition>
 </template>
 

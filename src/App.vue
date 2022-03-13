@@ -5,6 +5,7 @@
   <RectangleCreatorDemo />
 
   <!-- <TemplateVue /> -->
+  <!-- 左侧控制栏 -->
   <SideBar />
 </template>
 
