@@ -2,6 +2,7 @@
   <!-- <img width="50px" alt="Vue logo" src="./assets/logo.png" /> -->
   <!-- <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
   <CesiumGloble />
+  <BabylonDesign />
   <RectangleCreatorDemo />
 
   <!-- <TemplateVue /> -->
@@ -14,6 +15,8 @@ import TemplateVue from "./components/CesiumIndex/Template.vue";
 import SideBar from "./components/CesiumIndex/SideBar.vue";
 
 import CesiumGloble from "./components/CesiumGloble.vue";
+import BabylonDesign from "./components/BabylonDesign.vue";
+
 // import HelloWorld from "./components/HelloWorld.vue";
 // import RectangleCreatorDemo from "./components/RectangleCreatorDemo.vue";
 </script>
