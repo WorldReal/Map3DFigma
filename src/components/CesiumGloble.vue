@@ -8,6 +8,7 @@
 
 <style scoped>
 #cesiumContainer {
+  position: absolute;
   width: 100vw;
   height: 100vh;
 }

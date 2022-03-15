@@ -1,16 +1,16 @@
 
 <template>
-  <div>
-    <canvas :ref="bjsCanvas" width="500" height="500"></canvas>
-    <!-- <canvas id="indexBabylonCanvas" width="500" height="500"></canvas> -->
-  </div>
+<!-- <div id="BabylonCanvas"> -->
+  <canvas id="BabylonCanvas" :ref="bjsCanvas"></canvas>
+<!-- </div> -->
+    
 </template>
 
 <script setup lang="ts">
 // https://doc.cnbabylon.com/3-0-how-to-get-babylon-js/
 import { ref, reactive, onMounted } from "vue";
 // import {Engine,Scene,ArcRotateCamera,Vector3,HemisphericLight,PointLight,MeshBuilder} from 'babylonjs';
-import * as BABYLON from "babylonjs";
+import * as BABYLON from 'babylonjs';
 let canvas: any;
 const bjsCanvas = (el: any) => {
   canvas = el;
@@ -81,17 +81,17 @@ const getViewer = async () => {
 onMounted(getViewer);
 </script>
 
-<style>
-.indexBabylonCanvas {
+<style scoped>
+#BabylonCanvas {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
-.CVS1 {
+/* .CVS1 { */
   /* //穿透该层 */
-  pointer-events: none;
+  /* pointer-events: none; */
   /* //恢复点击处理 */
   /* pointer-events:auto; */
-}
+/* } */
 </style>
