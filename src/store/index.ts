@@ -8,12 +8,12 @@ const store = createStore({
         };
     },
     getters: {
-        countGetter: (state: any) => {
+        countGetter: (state: { count: number; }) => {
             return "Getter处理:" + state.count;
         },
     },
     mutations: {
-        increment(state) {
+        increment(state: { count: number; }) {
             state.count++;
         },
     },

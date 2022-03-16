@@ -15,7 +15,7 @@
 
   <!-- 左侧控制栏 z1x0-->
   <LeftControl style="z-index: 2" />
-  <TestControl_________TO________DELETE style="z-index: 999999" />
+  <test_to_delete_control style="z-index: 999999" />
 </template>
 
 <script setup lang="ts">
@@ -26,7 +26,7 @@
 import CesiumGloble from "./components/CesiumGloble.vue";
 import BabylonDesign from "./components/BabylonDesign.vue";
 import LeftControl from "./components/LeftControl.vue";
-import TestControl_________TO________DELETE from "./components/TestControl_________TO________DELETE.vue";
+import test_to_delete_control from "./components/test_to_delete_control.vue";
 </script>
 
 <style>

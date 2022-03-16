@@ -38,8 +38,8 @@
 <style scoped>
 .vuex {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
 }
 </style>
 <script setup lang="ts">
