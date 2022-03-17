@@ -32,7 +32,7 @@ onMounted(startCss)
 <style scoped>
 .testSiderBtn {
   position: absolute;
-  left: 30vw;
+  left: 400px;
   bottom: 0px;
   width: 30px;
 }
@@ -44,12 +44,12 @@ onMounted(startCss)
   position: absolute;
   left: 0px;
   top: 0px;
-  width: 30vw;
+  width: 400px;
   height: 100vh;
   background-color: rgba(255, 30, 0, 0.089);
 }
 .siderOpen {
-  left: -30vw;
+  left: -400px;
   /* width: 100px; */
   background-color: rgba(0, 153, 255, 0);
 }

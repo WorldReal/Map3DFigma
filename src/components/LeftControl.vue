@@ -2,9 +2,11 @@
 
 <template>
   <div class="sider" :class="{ siderOpen: isActive }">
-    <button class="siderBtn" @click="isActive = !isActive">{{ drawer }}</button>
-    <div id="div1">
-      <button id="div2">HELLO</button>
+    <!-- 右侧按钮 -->
+    <div class="sider-right-btnlist">
+      <button class="sider-right-btnlist-btn0" @click="changeActive">
+        {{ drawer }}
+      </button>
     </div>
   </div>
 </template>
@@ -15,7 +17,7 @@
 <script setup lang='ts'>
 import { ref, onMounted } from 'vue'
 // 初始化后延迟1s出现
-const drawer = ref('open')
+const drawer = ref('OPEN')
 const isActive = ref(true)
 // isActive.value = false
 const startCss = () => {
@@ -25,45 +27,40 @@ const startCss = () => {
 }
 onMounted(startCss)
 
+const changeActive = () => {
+  isActive.value = !isActive.value
+  drawer.value = isActive.value ? 'OPEN' : 'CLOSE'
+}
+
 // const isActive = ref(false)
-// https://www.w3school.com.cn/tiy/t.asp?f=eg_css3_perspective1
 </script>
 
 
 <style scoped>
-#div1 {
-  position: relative;
-  height: 150px;
-  width: 150px;
-  margin: 50px;
-  padding: 10px;
-  border: 1px solid black;
+/* 右侧按钮栏 */
+.sider-right-btnlist {
+  position: absolute;
+  /* // https://www.w3school.com.cn/tiy/t.asp?f=eg_css3_perspective1 */
   perspective: 150;
   -webkit-perspective: 150; /* Safari and Chrome */
-}
-
-#div2 {
-  position: absolute;
-  left: 149px;
+  left: 115px;
   top: 50px;
+}
+/* 按钮 */
+.sider-right-btnlist-btn0 {
+  /* mix-blend-mode对 webgl无效 */
+  /* mix-blend-mode: difference; */
   width: 100px;
-  height: 100px;
-
+  height: 30px;
   transform: rotateZ(90deg) rotateX(20deg);
-}
-.siderBtn {
-  position: absolute;
-  left: 149px;
-  top: 50px;
-  width: 50px;
-  height: 100px;
-  transform: rotateZ(90deg) rotateX(40deg);
+
+  background-color: rgba(240, 248, 255, 0.24);
+  color: rgba(240, 248, 255, 0.637);
 }
 .sider {
   /* 动画属性 */
   transition: left 1s ease-in, width 2s, height 2s, background-color 2s,
     transform 2s;
-
   position: absolute;
   left: 0px;
   top: 50px;
