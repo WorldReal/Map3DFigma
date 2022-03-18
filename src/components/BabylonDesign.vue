@@ -1,8 +1,8 @@
 
 <template>
-<!-- <div id="BabylonCanvas"> -->
-  <canvas id="BabylonCanvas" :ref="bjsCanvas"></canvas>
-<!-- </div> -->
+<div class="BabylonCanvas">
+  <canvas class="BabylonCanvas" :ref="bjsCanvas"></canvas>
+</div>
     
 </template>
 
@@ -82,7 +82,7 @@ onMounted(getViewer);
 </script>
 
 <style scoped>
-#BabylonCanvas {
+.BabylonCanvas {
   position: absolute;
   width: 100vw;
   height: 100vh;
