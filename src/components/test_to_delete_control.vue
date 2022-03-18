@@ -7,13 +7,18 @@
       T
     </button>
     <!-- 测试项 -->
-    <vuexVue/>
+    <!-- <vuexVue/> -->
+    <EngineSceneTransVue/>
+    <CanvasToImageVue/>
 
   </div>
 </template>
 
 <script setup lang="ts">
+import CanvasToImageVue from './test_to_delete_control/CanvasToImage.vue';
+import EngineSceneTransVue from './test_to_delete_control/EngineSceneTrans.vue';
 import vuexVue from './test_to_delete_control/vuex.vue';
+
 import { ref, onMounted } from 'vue'
 // 初始化后延迟1s出现
 const isActive = ref(true)
@@ -23,9 +28,8 @@ const startCss = () => {
     isActive.value = false
   }, 1000)
 }
-onMounted(startCss)
+// onMounted(startCss)
 
-// const isActive = ref(false)
 </script>
 
 

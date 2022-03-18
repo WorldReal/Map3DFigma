@@ -1,4 +1,5 @@
 import { createStore } from "vuex";
+import { EngineScene } from "./EngineScene";
 import { moduleA } from "./modulesTest/moduleA";
 
 const store = createStore({
@@ -20,6 +21,7 @@ const store = createStore({
     // 模块化
     modules: {
         ma: moduleA,
+        EngineScene: EngineScene
     },
 });
 

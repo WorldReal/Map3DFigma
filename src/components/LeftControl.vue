@@ -1,18 +1,14 @@
 
 
 <template>
+  <!-- 抽屉栏 -->
   <div class="sider" :class="{ siderOpen: isActive }">
     <!-- 右侧按钮 -->
     <div class="sider-right-btnlist">
-      <button class="sider-right-btnlist-btn0" @click="changeActive">
-        {{ drawer }}
-      </button>
+      <button class="sider-right-btnlist-btn0" @click="changeActive">{{ drawer }}</button>
     </div>
   </div>
 </template>
-
-
-
 
 <script setup lang='ts'>
 import { ref, onMounted } from 'vue'
@@ -65,7 +61,7 @@ const changeActive = () => {
   left: 0px;
   top: 50px;
   width: 150px;
-  height: 500px;
+  height: 300px;
   background-color: rgba(0, 153, 255, 0.438);
 }
 .siderOpen {
