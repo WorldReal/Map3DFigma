@@ -1,16 +1,18 @@
 
 <template>
-<div class="BabylonCanvas">
-  <canvas class="BabylonCanvas" :ref="bjsCanvas"></canvas>
-</div>
-    
+  <div class="BabylonCanvas">
+    <canvas class="BabylonCanvas" :ref="bjsCanvas"></canvas>
+  </div>
 </template>
 
 <script setup lang="ts">
+import { useStore } from "vuex";
 // https://doc.cnbabylon.com/3-0-how-to-get-babylon-js/
 import { ref, reactive, onMounted } from "vue";
 // import {Engine,Scene,ArcRotateCamera,Vector3,HemisphericLight,PointLight,MeshBuilder} from 'babylonjs';
-import * as BABYLON from 'babylonjs';
+import * as BABYLON from "babylonjs";
+const store = useStore();
+
 let canvas: any;
 const bjsCanvas = (el: any) => {
   canvas = el;
@@ -76,6 +78,13 @@ const getViewer = async () => {
   window.addEventListener("resize", function () {
     engine.resize();
   });
+
+  const BabylonDesignObj = {
+    canvas: canvas,
+    engine: engine,
+    scene: scene
+  };
+  store.commit("EngineScene/setBabylonDesignObj", BabylonDesignObj);
 };
 
 onMounted(getViewer);
@@ -89,9 +98,9 @@ onMounted(getViewer);
 }
 
 /* .CVS1 { */
-  /* //穿透该层 */
-  /* pointer-events: none; */
-  /* //恢复点击处理 */
-  /* pointer-events:auto; */
+/* //穿透该层 */
+/* pointer-events: none; */
+/* //恢复点击处理 */
+/* pointer-events:auto; */
 /* } */
 </style>

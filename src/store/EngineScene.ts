@@ -3,17 +3,44 @@ let EngineScene = {
     // https://vuex.vuejs.org/zh/guide/modules.html#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4
     namespaced: true,
     state: {
-        AllSceneUp: 'CesiumGloble',//CesiumGloble BabylonDesign CBScence
-        CesiumGlobleCanvas:null,
+        AllSceneUp: "CesiumGloble", //CesiumGloble BabylonDesign CBScence
+        CesiumGlobleObj: {
+            canvas: null,
+            viewer: null,
+            firstIndex: true,
+        },
+        BabylonDesignObj: {
+            canvas: null,
+            engine: null,
+            scene: null,
+        },
+        CBScenceObj: {
+            canvasCesium: null,
+            viewer: null,
+            canvasBabylon: null,
+            engine: null,
+            sceneBabylon: null,
+        },
     },
     mutations: {
-        setAllSceneUp(state: any,AllSceneUp: String) {
-            debugger
+        setAllSceneUp(state: any, AllSceneUp: String) {
+            debugger;
             state.AllSceneUp = AllSceneUp;
+            state.CesiumGlobleObj.firstIndex = AllSceneUp == "CesiumGloble";
+            state.BabylonDesignObj.firstIndex = AllSceneUp == "BabylonDesign";
+            state.CBScenceObj.firstIndex = AllSceneUp == "CBScence";
         },
-        setCesiumGlobleCanvas(state: any,CesiumGlobleCanvas: any) {
-            debugger
-            state.CesiumGlobleCanvas = CesiumGlobleCanvas;
+        setCesiumGlobleObj(state: any, CesiumGlobleObj: any) {
+            CesiumGlobleObj.firstIndex = true;
+            state.CesiumGlobleObj = CesiumGlobleObj;
+        },
+        setBabylonDesignObj(state: any, BabylonDesignObj: any) {
+            BabylonDesignObj.firstIndex = false;
+            state.BabylonDesignObj = BabylonDesignObj;
+        },
+        setCBScenceObj(state: any, CBScenceObj: any) {
+            CBScenceObj.firstIndex = false;
+            state.CBScenceObj = CBScenceObj;
         },
     },
     getters: {

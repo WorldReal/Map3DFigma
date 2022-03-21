@@ -7,26 +7,33 @@
     <div class="sider-right-btnlist">
       <button class="sider-right-btnlist-btn0" @click="changeActive">{{ drawer }}</button>
     </div>
+    <EngineSceneTrans></EngineSceneTrans>
+    <CanvasToImageAndFigma></CanvasToImageAndFigma>
+
+    <!-- 截图 -->
   </div>
 </template>
 
 <script setup lang='ts'>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
+import CanvasToImageAndFigma from "./CesiumIndex/CanvasToImageAndFigma.vue";
+import EngineSceneTrans from "./test_to_delete_control/EngineSceneTrans.vue";
+
 // 初始化后延迟1s出现
-const drawer = ref('OPEN')
-const isActive = ref(true)
+const drawer = ref("OPEN");
+const isActive = ref(true);
 // isActive.value = false
 const startCss = () => {
   setTimeout(() => {
-    isActive.value = false
-  }, 1000)
-}
-onMounted(startCss)
+    isActive.value = false;
+  }, 1000);
+};
+onMounted(startCss);
 
 const changeActive = () => {
-  isActive.value = !isActive.value
-  drawer.value = isActive.value ? 'OPEN' : 'CLOSE'
-}
+  isActive.value = !isActive.value;
+  drawer.value = isActive.value ? "OPEN" : "CLOSE";
+};
 
 // const isActive = ref(false)
 </script>

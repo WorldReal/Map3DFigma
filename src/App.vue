@@ -1,17 +1,18 @@
 <template>
-
   <!-- 底图 z0-->
-  <CesiumGloble class="CesiumGloble" :class="{ AllSceneUp: activeIndexScene=='CesiumGloble'}" />
-  <BabylonDesign class="BabylonDesign" :class="{ AllSceneUp: activeIndexScene=='BabylonDesign'}"  />
-  <CBScence class="CBScence" :class="{ AllSceneUp: activeIndexScene=='CBScence'}"/>
+  <CesiumGloble class="CesiumGloble" :class="{ AllSceneUp: activeIndexScene == 'CesiumGloble' }" />
+  <BabylonDesign
+    class="BabylonDesign"
+    :class="{ AllSceneUp: activeIndexScene == 'BabylonDesign' }"
+  />
+  <!-- <CBScence class="CBScence" :class="{ AllSceneUp: activeIndexScene=='CBScence'}"/> -->
   <!--另外一种写法-->
   <!-- <CesiumGloble class="CesiumGloble" :class="(activeIndexScene=='CesiumGloble')?'':'AllSceneUp' " /> -->
-  
 
   <!-- 左侧控制栏 z1x0-->
-  <LeftControl  style="z-index: 10" />
+  <LeftControl style="z-index: 10" />
   <!-- 测试控制栏 -->
-  <test_to_delete_control style="z-index: 999999" />
+  <!-- <test_to_delete_control style="z-index: 999999" /> -->
 </template>
 
 <script setup lang="ts">
@@ -46,18 +47,19 @@ body {
   当前最顶层AllSceneUp5
   
   切换状态vuex全局控制 */
-.CesiumGloble{
-z-index: 3
+.CesiumGloble {
+  z-index: 3;
 }
-.BabylonDesign{
-z-index: 2
+.BabylonDesign {
+  z-index: 2;
 }
-.CBScence{/*融合场景*/
-/* TODO Z-index双引擎嵌套问题 */
-z-index: 0
+.CBScence {
+  /*融合场景*/
+  /* TODO Z-index双引擎嵌套问题 */
+  z-index: 0;
 }
 
-.AllSceneUp{
-  z-index: 5
+.AllSceneUp {
+  z-index: 5;
 }
 </style>

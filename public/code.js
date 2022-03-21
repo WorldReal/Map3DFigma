@@ -16,7 +16,5 @@ figma.ui.onmessage = msg => {
     }
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
-
   }
-
 };
