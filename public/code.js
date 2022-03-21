@@ -22,17 +22,24 @@ figma.ui.onmessage = msg => {
     for (let i = 0; i < 3; i++) {
       const rect = figma.createRectangle();
       rect.x = i * 150;
-      console.log(msg.image)
-      rect.fills = [{ type: 'IMAGE',scaleMode: "FILL",imageHash: msg.image }];
+      console.log('image', msg.image)
+      let testimagehash = msg.image.replace('data:image/png;base64,', '')
+      console.log('testimagehash', testimagehash)
+      // rect.fills = [{ type: 'IMAGE',scaleMode: "FILL",imageHash: msg.image. }];
+      rect.fills = [{ type: 'IMAGE', scaleMode: "FILL", imageHash: testimagehash }];
+      // console.log('!!!', msg.newBytes)
+      // console.log('!!!', figma.createImage(msg.newBytes).hash)
+      // rect.fills = [{ type: 'IMAGE', scaleMode: "FILL", imageHash: figma.createImage(msg.newBytes).hash }];
+
       figma.currentPage.appendChild(rect);
       nodes.push(rect);
     }
     figma.currentPage.selection = nodes;
     figma.viewport.scrollAndZoomIntoView(nodes);
 
-   
+    debugger
     const selected = figma.currentPage.selection[0]
-    invertImages(selected, msg.image)
+    // invertImages(selected, msg.image)
     // msg.image
 
   }
@@ -42,9 +49,9 @@ figma.ui.onmessage = msg => {
 };
 
 
-async function invertImages(node,msgImage) {
+async function invertImages(node, msgImage) {
   debugger
-  console.log('invertImages',msgImage)
+  console.log('invertImages', msgImage)
   const newFills = []
   for (const paint of node.fills) {
     if (paint.type === 'IMAGE') {
@@ -68,7 +75,10 @@ async function invertImages(node,msgImage) {
       // // Create a new paint for the new image.
       // const newPaint = JSON.parse(JSON.stringify(paint))
       // newPaint.imageHash = figma.createImage(newBytes).hash
-      newPaint.imageHash = msgImage
+
+
+      // newPaint.imageHash = msgImage
+      newPaint.imageHash = figma.createImage(newBytes).hash
       newFills.push(newPaint)
     }
   }
