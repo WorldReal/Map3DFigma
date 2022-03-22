@@ -1,5 +1,5 @@
 /// <reference types="@figma/plugin-typings" />
-figma.showUI(__html__, { width: 768, height: 480, title: 'Map3DFigma' });
+figma.showUI(__html__, { width: 800, height: 500, title: 'Map3DFigma' });
 
 figma.ui.onmessage = msg => {
   // One way of distinguishing between different types of messages sent from
