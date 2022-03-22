@@ -30,7 +30,12 @@ let EngineScene = {
             state.BabylonDesignObj.firstIndex = AllSceneUp == "BabylonDesign";
             state.CBScenceObj.firstIndex = AllSceneUp == "CBScence";
         },
-        setCesiumGlobleObj(state: any, CesiumGlobleObj: any) {
+        setCesiumGlobleObj(state: any, CesiumGlobleObj: {
+            canvas: null,
+            viewer: null,
+            firstIndex: true,
+        }) {
+            debugger
             CesiumGlobleObj.firstIndex = true;
             state.CesiumGlobleObj = CesiumGlobleObj;
         },

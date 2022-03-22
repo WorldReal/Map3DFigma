@@ -1,9 +1,10 @@
 <!-- 引擎和场景切换器 全局设置 -->
 <template>
   <div>
+    <div style="color:white">切换场景</div>
     <button @click="setAllSceneUp('BabylonDesign')"> BabylonDesign</button>
     <button @click="setAllSceneUp('CesiumGloble')"> CesiumGloble</button>
-    <button @click="setAllSceneUp('CBScence')"> CBScence</button>
+    <!-- <button @click="setAllSceneUp('CBScence')"> CBScence</button> -->
   </div>
 </template>
 

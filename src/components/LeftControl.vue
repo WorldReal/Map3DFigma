@@ -7,17 +7,23 @@
     <div class="sider-right-btnlist">
       <button class="sider-right-btnlist-btn0" @click="changeActive">{{ drawer }}</button>
     </div>
+    <!-- 切换场景 -->
     <EngineSceneTrans></EngineSceneTrans>
+    <!-- 截图导出 -->
     <CanvasToImageAndFigma></CanvasToImageAndFigma>
-
-    <!-- 截图 -->
+    <!-- 添加测试数据 -->
+    <AddCesiumData></AddCesiumData>
+    <!-- 后渲染测试 -->
+    <GlobleStyle></GlobleStyle>
   </div>
 </template>
 
 <script setup lang='ts'>
 import { ref, onMounted } from "vue";
+import AddCesiumData from "./CesiumIndex/AddCesiumData.vue";
 import CanvasToImageAndFigma from "./CesiumIndex/CanvasToImageAndFigma.vue";
-import EngineSceneTrans from "./test_to_delete_control/EngineSceneTrans.vue";
+import EngineSceneTrans from "./CesiumIndex/EngineSceneTrans.vue";
+import GlobleStyle from "./CesiumIndex/GlobleStyle.vue";
 
 // 初始化后延迟1s出现
 const drawer = ref("OPEN");
@@ -68,7 +74,8 @@ const changeActive = () => {
   left: 0px;
   top: 50px;
   width: 150px;
-  height: 300px;
+  /* 不定长 有图片 */
+  /* height: 300px; */
   background-color: rgba(0, 153, 255, 0.438);
 }
 .siderOpen {
