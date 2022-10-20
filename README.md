@@ -25,3 +25,9 @@
 | figma仅支持单文件（外部依赖） | 开发使用npm辅助 <br>发布external内部库使用cdn<br>注意cesium等库特殊处理 | vite-plugin-external<br>svite-plugin-html-config<br>（更换资源路径） |
 | figma仅支持单文件（内部依赖） |                     图片使用base64<br>内联样式和js                      |                        vite-plugin-singlefile                        |
 | <!--                          |                                Template0                                |                              Template1                               | Template2 | --> |
+
+
+！！！！！！！！！仅提供简单大小场景功能
+
+
+复杂版本单一个或者不同版本！！！！！！！！
